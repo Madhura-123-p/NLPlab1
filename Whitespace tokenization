@@ -1,0 +1,5 @@
+whitespace_tokens = text.split()
+
+print("Whitespace tokens:")
+print(whitespace_tokens)
+print("Count:", len(whitespace_tokens))
