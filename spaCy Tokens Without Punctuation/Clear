@@ -1,0 +1,8 @@
+clean_tokens = [
+token.text for token in doc
+if not token.is_space and not token.is_punct
+]
+
+print("Filtered tokens:")
+print(clean_tokens)
+print("Count:", len(clean_tokens))

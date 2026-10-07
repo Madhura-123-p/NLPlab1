@@ -1,0 +1,20 @@
+import pandas as pd
+
+comparison = pd.DataFrame({
+"Original": [token.text for token in doc if token.is_alpha],
+"POS": [token.pos_ for token in doc if token.is_alpha],
+"Porter Stem": [
+porter.stem(token.text.lower())
+for token in doc if token.is_alpha
+],
+"Snowball Stem": [
+snowball.stem(token.text.lower())
+for token in doc if token.is_alpha
+],
+"spaCy Lemma": [
+token.lemma_.lower()
+for token in doc if token.is_alpha
+]
+})
+
+print(comparison.to_string(index=False))

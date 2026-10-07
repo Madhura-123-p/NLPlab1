@@ -1,0 +1,19 @@
+def reduction_percentage(original, normalized):
+    original_unique = len(set(original))
+    normalized_unique = len(set(normalized))
+    return (1 - normalized_unique / original_unique) * 100
+
+print(
+"Porter vocabulary reduction:",
+round(reduction_percentage(original_words, porter_words), 2), "%"
+)
+
+print(
+"Snowball vocabulary reduction:",
+round(reduction_percentage(original_words, snowball_words), 2), "%"
+)
+
+print(
+"spaCy lemma vocabulary reduction:",
+round(reduction_percentage(original_words, lemma_words), 2), "%"
+)
