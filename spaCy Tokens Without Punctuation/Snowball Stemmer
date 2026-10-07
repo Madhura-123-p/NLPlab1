@@ -1,0 +1,11 @@
+from nltk.stem import SnowballStemmer
+
+snowball = SnowballStemmer("english")
+
+snowball_stems = [
+snowball.stem(token.text.lower())
+for token in doc
+if token.is_alpha
+]
+
+print(snowball_stems)

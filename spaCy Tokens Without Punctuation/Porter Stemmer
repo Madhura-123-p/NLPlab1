@@ -1,0 +1,11 @@
+from nltk.stem import PorterStemmer
+
+porter = PorterStemmer()
+
+porter_stems = [
+porter.stem(token.text.lower())
+for token in doc
+if token.is_alpha
+]
+
+print(porter_stems)

@@ -1,0 +1,5 @@
+spacy_tokens = [token.text for token in doc]
+
+print("spaCy tokens:")
+print(spacy_tokens)
+print("Count:", len(spacy_tokens))

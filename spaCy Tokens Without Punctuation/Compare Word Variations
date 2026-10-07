@@ -1,0 +1,36 @@
+original_words = [
+token.text.lower()
+for token in doc
+if token.is_alpha
+]
+
+porter_words = [porter.stem(w) for w in original_words]
+snowball_words = [snowball.stem(w) for w in original_words]
+
+lemma_words = [token.lemma_.lower()
+for token in doc
+if token.is_alpha
+]
+
+metrics = pd.DataFrame({
+"Method": [
+"Original words",
+"Porter stemming",
+"Snowball stemming",
+"spaCy lemmatization"
+],
+"Total words": [
+len(original_words),
+len(porter_words),
+len(snowball_words),
+len(lemma_words)
+],
+"Unique forms": [
+len(set(original_words)),
+len(set(porter_words)),
+len(set(snowball_words)),
+len(set(lemma_words))
+]
+})
+
+print(metrics)

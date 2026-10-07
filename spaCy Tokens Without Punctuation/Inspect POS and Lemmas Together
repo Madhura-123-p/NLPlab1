@@ -1,0 +1,8 @@
+for token in doc:
+    if token.is_alpha:
+        print(
+            f"{token.text:15} "
+            f"POS={token.pos_:8} "
+            f"TAG={token.tag_:8} "
+            f"LEMMA={token.lemma_}"
+        )

@@ -1,0 +1,8 @@
+lemmas = [
+token.lemma_.lower()
+for token in doc
+if token.is_alpha
+]
+
+print("spaCy lemmas:")
+print(lemmas)

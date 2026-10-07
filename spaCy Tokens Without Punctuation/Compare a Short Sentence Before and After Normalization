@@ -1,0 +1,24 @@
+sample = "The students were studying and the researchers studied the results."
+
+sample_doc = nlp(sample)
+
+print("Original:")
+print(sample)
+
+print("\nPorter stems:")
+print([
+porter.stem(t.text.lower())
+for t in sample_doc if t.is_alpha
+])
+
+print("\nSnowball stems:")
+print([
+snowball.stem(t.text.lower())
+for t in sample_doc if t.is_alpha
+])
+
+print("\nspaCy lemmas:")
+print([
+t.lemma_.lower()
+for t in sample_doc if t.is_alpha
+])
